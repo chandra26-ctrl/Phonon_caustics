@@ -9,9 +9,9 @@ This project uses Geant4 and G4CMP to simulate ballistic phonon propagation thro
 
 The simulated geometry consists of:
 
-- A circular silicon wafer with a primary flat
+- A circular silicon wafer (white) with a primary flat
 - Wafer radius: `50 mm`
 - Wafer thickness: `525 µm`
 - Primary-flat length: `32.5 mm`
 - Silicon crystal orientation: `(100)` with a `45°` rotation
-- An aluminum phonon sensor covering the upper wafer surface
+- A aluminum phonon sensor (blue) covering the upper wafer surface
