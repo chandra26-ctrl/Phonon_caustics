@@ -70,4 +70,6 @@ Only phonons absorbed at the aluminum sensor boundary are written to the output 
 ## Results
 The hit positions are binned in the X–Y plane to produce a phonon-caustic intensity map. Regions with more hits correspond to crystal directions in which phonon energy is focused.
 
-
+| Header 1 | Header 2 | Header 3 |
+| --- | --- | --- |
+| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 |
