@@ -70,18 +70,16 @@ Only phonons absorbed at the aluminum sensor boundary are written to the output 
 ## Results
 The hit positions are binned in the X–Y plane to produce a phonon-caustic intensity map. Regions with more hits correspond to crystal directions in which phonon energy is focused.
 
-<table border="1">
-  <!-- Row 1 -->
-  <tr>
-    <td>Slow</td>
-    <td>Fast</td>
-    <td>Long</td>
-  </tr>
-  
-  <!-- Row 2 -->
-  <tr>
-    <td><img src="https://github.com/chandra26-ctrl/Phonon_caustics/blob/main/images/Slow.png" width="300"></td>
-    <td><img src="https://github.com/chandra26-ctrl/Phonon_caustics/blob/main/images/Slow.png" width="300"></td>
-    <td><img src="https://github.com/chandra26-ctrl/Phonon_caustics/blob/main/images/Slow.png" width="300"></td>
-  </tr>
+<table>
+<tr>
+<td align="center">Slow</td>
+<td align="center">Fast</td>
+<td align="center">Long</td>
+</tr>
+
+<tr>
+<td><img src="images/Slow.png" width="300"></td>
+<td><img src="images/Fast.png" width="300"></td>
+<td><img src="images/Long.png" width="300"></td>
+</tr>
 </table>
