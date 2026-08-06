@@ -38,9 +38,36 @@ The source is located near one face of the wafer away from the aluminum detector
 
 Building the example using cmake:
 ```
-> mkdir build
-> cd build
-> cmake ..
-> make
+mkdir build
+cd build
+cmake ..
+make
 ```
+
+To run the simulation, go into the `build` folder and execute:
+```
+./g4cmpPhononCaustics Caustic.mac
+```
+
+The macro currently requests ten worker threads:
+```
+/run/numberOfThreads 10
+```
+Each thread may produce a separate hit file. These files can be combined with:
+```
+cat phonon_hits_G4WT*.txt > phonon_hits.txt
+```
+
+## Output Data
+
+Each detected phonon produces one row containing six columns:
+```
+event_id  track_id  phonon_type  x  y  z
+```
+The position coordinates are written in meters.
+Only phonons absorbed at the aluminum sensor boundary are written to the output file.
+
+## Results
+The hit positions are binned in the X–Y plane to produce a phonon-caustic intensity map. Regions with more hits correspond to crystal directions in which phonon energy is focused.
+
 
