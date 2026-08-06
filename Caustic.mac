@@ -1,0 +1,20 @@
+# This Macro is to Generate Phonons Caustics patterns
+/run/numberOfThreads 10
+/run/initialize
+
+/gps/energy 0.03 eV
+/gps/number 1
+#/gps/ang/type iso
+#/gps/pos/centre 0.0 0.0 0 cm
+
+#/gps/pos/type Point
+/gps/pos/centre 0.0 0.0 -0.262 mm
+
+/gps/ang/type iso
+/gps/ang/mintheta 90 deg
+/gps/ang/maxtheta 180 deg
+
+/process/inactivate phononScattering
+/process/inactivate phononDownconversion
+/run/printProgress 10000
+/run/beamOn 40000000

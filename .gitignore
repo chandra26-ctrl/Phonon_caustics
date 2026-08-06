@@ -1,0 +1,21 @@
+# Build directories
+build/
+build~/
+
+# Compiled files
+*.o
+*.so
+*.a
+
+# Generated simulation data
+phonon_hits*.txt
+Fast_Slow_phonon_hits.txt
+Long_phonon_hits.txt
+results/*phonon_hits*.txt
+
+# Generated plots
+*.pdf
+
+# Editor and temporary files
+*~
+.DS_Store
