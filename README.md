@@ -15,3 +15,32 @@ The simulated geometry consists of:
 - Primary-flat length: `32.5 mm`
 - Silicon crystal orientation: `(100)` with a `45°` rotation
 - A aluminum phonon sensor (blue) covering the upper wafer surface
+  
+The sensor has approximately the same footprint as the silicon wafer and is positioned directly above its top surface.
+
+The silicon–aluminum boundary is configured for complete phonon absorption. When a phonon reaches this boundary and is absorbed, the simulation records it as a detector hit.
+
+## How Phonons are Spawned
+Phonon generation is controlled by `Caustic.mac` and
+`Caustic_PhononPrimaryGeneratorAction.cc`.
+
+The default configuration generates:
+
+- `40,000,000` primary phonons
+- One phonon per event
+- Phonon energy: `0.03 eV`
+- Source position: `(0, 0, -0.262 mm)`
+- Angular distribution: isotropic within `90° ≤ θ ≤ 180°`
+
+The source is located near one face of the wafer away from the aluminum detector.
+
+## Running the simulation
+
+Building the example using cmake:
+```
+> mkdir build
+> cd build
+> cmake ..
+> make
+```
+
