@@ -80,8 +80,8 @@ The hit positions are binned in the X–Y plane to produce a phonon-caustic inte
   
   <!-- Row 2 -->
   <tr>
-    <td>a</td>
-    <td>a</td>
-    <td>a</td>
+    <td><img src="https://github.com/chandra26-ctrl/Phonon_caustics/blob/main/images/Slow.png" width="300"></td>
+    <td><img src="https://github.com/chandra26-ctrl/Phonon_caustics/blob/main/images/Slow.png" width="300"></td>
+    <td><img src="https://github.com/chandra26-ctrl/Phonon_caustics/blob/main/images/Slow.png" width="300"></td>
   </tr>
 </table>
