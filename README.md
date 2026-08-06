@@ -32,7 +32,7 @@ The default configuration generates:
 - Source position: `(0, 0, -0.262 mm)`
 - Angular distribution: isotropic within `90° ≤ θ ≤ 180°`
 
-The source is located near one face of the wafer away from the aluminum detector.
+The source is located near the face of the wafer away from the aluminum detector.
 
 ## Running the simulation
 
