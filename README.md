@@ -73,9 +73,9 @@ The hit positions are binned in the X–Y plane to produce a phonon-caustic inte
 <table border="1">
   <!-- Row 1 -->
   <tr>
-    <td><img src="images/Slow.png" width="300"></td>
-    <td><img src="images/Slow.png" width="300"></td>
-    <td><img src="images/Slow.png" width="300"></td>
+    <td>Slow</td>
+    <td>Fast</td>
+    <td>Long</td>
   </tr>
   
   <!-- Row 2 -->
