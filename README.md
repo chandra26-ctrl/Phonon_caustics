@@ -83,3 +83,12 @@ The phonon hit positions are binned in the X–Y plane to generate phonon causti
 <td><img src="images/Long.png" width="300"></td>
 </tr>
 </table>
+
+## Files of Interest
+
+- `Caustic.mac` — Source, run, and physics configuration.
+- `Caustics_Plots.C` — ROOT macro for generating phonon caustic intensity maps.
+- `src/Caustic_PhononDetectorConstruction.cc` — Defines the silicon wafer, crystal orientation, and detector geometry.
+- `src/Caustic_PhononPrimaryGeneratorAction.cc` — Configures the primary phonon source and polarization.
+- `src/Caustic_PhononSensitivity.cc` — Records phonon hits on the detector surface.
+- `images/` — Contains geometry visualizations and example phonon caustic results.
