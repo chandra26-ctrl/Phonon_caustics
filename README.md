@@ -68,7 +68,7 @@ The position coordinates are written in meters.
 Only phonons absorbed at the aluminum sensor boundary are written to the output file.
 
 ## Results
-The phonon hit positions are binned in the X–Y plane to generate phonon caustic intensity maps. Regions with a higher density of hits indicate crystal directions where phonon energy is preferentially focused due to anisotropic propagation. The figures below show the phonon caustic intensity maps for each phonon polarization mode.
+The phonon hit positions are binned in the X–Y plane to generate phonon caustic intensity maps. Regions with a higher density of hits indicate crystal directions where phonon energy is preferentially focused due to anisotropic propagation. The figures below show the phonon caustic intensity maps for each phonon polarization mode, with all axes given in meters.
 
 <table>
 <tr>
