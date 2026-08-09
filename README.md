@@ -33,15 +33,14 @@ The silicon–aluminum boundary is configured for complete phonon absorption. Wh
 Phonon generation is controlled by `Caustic.mac` and
 `Caustic_PhononPrimaryGeneratorAction.cc`.
 
-The current configuration generates:
+The original configuration generates:
 
 - `40,000,000` primary phonons
 - One phonon per event
 - Phonon energy: `0.03 eV`
-- Source type: circular plane
-- Source radius: `0.1 mm`
-- Source position: `(0, 0, -0.0495 mm)`
-- Angular distribution: isotropic within `0° ≤ θ ≤ 90°`
+- Source type: point source
+- Source position: `(0, 0, -0.262 mm)`
+- Angular distribution: isotropic within `90° ≤ θ ≤ 180°`
 
 The circular source is located at the lower face of the `100 µm` wafer, opposite the aluminum detector, and emits phonons into the wafer toward the detector. The previous point-source commands remain commented in `Caustic.mac`, making it easy to switch between the original and updated source geometries.
 
