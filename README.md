@@ -102,6 +102,8 @@ These plots provide the reference result from the original point-source configur
 </tr>
 </table>
 
+The transverse-slow and longitudinal modes show good qualitative agreement with the reference patterns. The transverse-fast mode also reproduces the main caustic features, although four unexpected low-intensity regions appear near the center of the distribution. The origin of these features has not yet been identified. To investigate whether the blue spots could be reduced or eliminated, two modifications were tested: replacing the point source with a circular source and varying the wafer dimensions. The results and observations from these tests are presented below.
+
 ### Circular Source
 
 The point source was replaced by a circular source with a radius of `0.4 mm`. Sampling the initial phonon positions across a finite area broadens the injection region while retaining the polarization-dependent caustic structure.
