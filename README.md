@@ -78,9 +78,9 @@ The phonon hit positions are binned in the X–Y plane to generate phonon causti
 </tr>
 
 <tr>
-<td><img src="./images/Slow.png" width="300"></td>
-<td><img src="images/Fast.png" width="300"></td>
-<td><img src="images/Long.png" width="300"></td>
+<td><img src="./images/point_source/Slow.png" width="300"></td>
+<td><img src="images/point_source/Fast.png" width="300"></td>
+<td><img src="images/point_source/Long.png" width="300"></td>
 </tr>
 </table>
 
