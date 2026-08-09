@@ -20,7 +20,7 @@ The simulated geometry consists of:
 
 - A circular silicon wafer (white) with a primary flat
 - Wafer radius: `50 mm`
-- Wafer thickness: `100 µm` in the current configuration
+- Wafer thickness: `525 µm` in the original configuration
 - Primary-flat length: `32.5 mm`
 - Silicon crystal orientation: `(100)` with a `45°` rotation
 - An aluminum phonon sensor (blue) covering the upper wafer surface
