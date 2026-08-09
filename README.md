@@ -42,9 +42,8 @@ The original configuration generates:
 - Source position: `(0, 0, -0.262 mm)`
 - Angular distribution: isotropic within `90° ≤ θ ≤ 180°`
 
-The circular source is located at the lower face of the `100 µm` wafer, opposite the aluminum detector, and emits phonons into the wafer toward the detector. The previous point-source commands remain commented in `Caustic.mac`, making it easy to switch between the original and updated source geometries.
-
-The phonon type is selected in `src/Caustic_PhononPrimaryGeneratorAction.cc`. The current checked-in configuration generates longitudinal phonons; the commented definitions can be used for the transverse-fast and transverse-slow runs.
+The phonons are generated on the side of the wafer opposite the aluminum detector.
+The phonon type is selected in `src/Caustic_PhononPrimaryGeneratorAction.cc`.
 
 ## Running the simulation
 
