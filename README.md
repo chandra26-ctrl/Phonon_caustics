@@ -1,20 +1,29 @@
 # Silicon Wafer Phonon Caustics with G4CMP
 
-This repo is a modified version of the phonon caustic G4CMP example.
+This repository is a modified version of the G4CMP phonon-caustics example.
 
-This project uses Geant4 and G4CMP to simulate ballistic phonon propagation through a silicon wafer. Phonons are emitted from a point source, transported through the crystal lattice, and recorded when they reach an aluminum sensor on the wafer surface.
+This project uses Geant4 and G4CMP to simulate ballistic phonon propagation through a silicon wafer. Phonons are transported through the crystal lattice and recorded when they reach an aluminum sensor on the wafer surface. The original point-source example has been extended to use a finite circular source and to study how changing the wafer thickness affects the observed caustic patterns.
+
+## Changes Made
+
+- Replaced the original point source with a circular plane source of radius `0.1 mm`.
+- Moved the source to the lower face of the wafer and directed phonons toward the detector.
+- Varied the wafer thickness to study its effect on the caustic pattern; the current geometry uses a `100 µm` wafer instead of the original `525 µm` wafer.
+- Preserved result plots from the point-source, circular-source, and varying-thickness studies for comparison.
+- Kept separate plots for transverse-slow, transverse-fast, and longitudinal phonons.
 
 ## Simulation Geometry
+
 ![Visualization of the silicon wafer and aluminum sensor](images/Si_wafer.png)
 
 The simulated geometry consists of:
 
 - A circular silicon wafer (white) with a primary flat
 - Wafer radius: `50 mm`
-- Wafer thickness: `525 µm`
+- Wafer thickness: `100 µm` in the current configuration
 - Primary-flat length: `32.5 mm`
 - Silicon crystal orientation: `(100)` with a `45°` rotation
-- A aluminum phonon sensor (blue) covering the upper wafer surface
+- An aluminum phonon sensor (blue) covering the upper wafer surface
   
 The sensor has approximately the same footprint as the silicon wafer and is positioned directly above its top surface.
 
@@ -24,15 +33,19 @@ The silicon–aluminum boundary is configured for complete phonon absorption. Wh
 Phonon generation is controlled by `Caustic.mac` and
 `Caustic_PhononPrimaryGeneratorAction.cc`.
 
-The default configuration generates:
+The current configuration generates:
 
 - `40,000,000` primary phonons
 - One phonon per event
 - Phonon energy: `0.03 eV`
-- Source position: `(0, 0, -0.262 mm)`
-- Angular distribution: isotropic within `90° ≤ θ ≤ 180°`
+- Source type: circular plane
+- Source radius: `0.1 mm`
+- Source position: `(0, 0, -0.0495 mm)`
+- Angular distribution: isotropic within `0° ≤ θ ≤ 90°`
 
-The source is located near the face of the wafer away from the aluminum detector.
+The circular source is located at the lower face of the `100 µm` wafer, opposite the aluminum detector, and emits phonons into the wafer toward the detector. The previous point-source commands remain commented in `Caustic.mac`, making it easy to switch between the original and updated source geometries.
+
+The phonon type is selected in `src/Caustic_PhononPrimaryGeneratorAction.cc`. The current checked-in configuration generates longitudinal phonons; the commented definitions can be used for the transverse-fast and transverse-slow runs.
 
 ## Running the simulation
 
@@ -68,7 +81,12 @@ The position coordinates are written in meters.
 Only phonons absorbed at the aluminum sensor boundary are written to the output file.
 
 ## Results
-The phonon hit positions are binned in the X–Y plane to generate phonon caustic intensity maps. Regions with a higher density of hits indicate crystal directions where phonon energy is preferentially focused due to anisotropic propagation. The figures below show the phonon caustic intensity maps for each phonon polarization mode, with all axes given in meters.
+
+The phonon hit positions are binned in the X–Y plane to generate phonon-caustic intensity maps. Regions with a higher density of hits indicate crystal directions where phonon energy is preferentially focused due to anisotropic propagation. All plot axes are given in meters and the color scale represents the number of detected phonons per bin.
+
+### Original Point Source
+
+These plots provide the reference result from the original point-source configuration.
 
 <table>
 <tr>
@@ -81,6 +99,42 @@ The phonon hit positions are binned in the X–Y plane to generate phonon causti
 <td><img src="./images/point_source/Slow.png" width="300"></td>
 <td><img src="images/point_source/Fast.png" width="300"></td>
 <td><img src="images/point_source/Long.png" width="300"></td>
+</tr>
+</table>
+
+### Circular Source
+
+The point source was replaced by a circular source with a radius of `0.1 mm`. Sampling the initial phonon positions across a finite area broadens the injection region while retaining the polarization-dependent caustic structure.
+
+<table>
+<tr>
+<td align="center">Transverse Slow</td>
+<td align="center">Transverse Fast</td>
+<td align="center">Longitudinal</td>
+</tr>
+
+<tr>
+<td><img src="images/circular_source/slow.png" width="300"></td>
+<td><img src="images/circular_source/fast.png" width="300"></td>
+<td><img src="images/circular_source/long.png" width="300"></td>
+</tr>
+</table>
+
+### Varying the Wafer Thickness
+
+The wafer thickness was also varied to change the propagation distance between the source and detector. Reducing the thickness changes the spatial scale of the pattern and concentrates the caustic features closer to the source position. The current checked-in detector geometry uses a thickness of `100 µm`; the original geometry used `525 µm`.
+
+<table>
+<tr>
+<td align="center">Transverse Slow</td>
+<td align="center">Transverse Fast</td>
+<td align="center">Longitudinal</td>
+</tr>
+
+<tr>
+<td><img src="images/varying_thickness/Slow.png" width="300"></td>
+<td><img src="images/varying_thickness/Fast.png" width="300"></td>
+<td><img src="images/varying_thickness/Long.png" width="300"></td>
 </tr>
 </table>
 
