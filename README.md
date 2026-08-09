@@ -7,10 +7,7 @@ This project uses Geant4 and G4CMP to simulate ballistic phonon propagation thro
 ## Changes Made
 
 - Replaced the original point source with a circular plane source of radius `0.1 mm`.
-- Moved the source to the lower face of the wafer and directed phonons toward the detector.
 - Varied the wafer thickness to study its effect on the caustic pattern; the current geometry uses a `100 µm` wafer instead of the original `525 µm` wafer.
-- Preserved result plots from the point-source, circular-source, and varying-thickness studies for comparison.
-- Kept separate plots for transverse-slow, transverse-fast, and longitudinal phonons.
 
 ## Simulation Geometry
 
