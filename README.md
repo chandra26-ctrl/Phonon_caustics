@@ -4,7 +4,7 @@ This repository is a modified version of the G4CMP phonon-caustics example.
 
 This project uses Geant4 and G4CMP to simulate ballistic phonon propagation through a silicon wafer. Phonons are transported through the crystal lattice and recorded when they reach an aluminum sensor on the wafer surface. The original point-source example has been extended to use a finite circular source and to study how changing the wafer thickness affects the observed caustic patterns.
 
-## Changes Made
+## Changes Made (Aug 8, 2026)
 
 - Replaced the original point source with a circular plane source of radius `0.1 mm`.
 - Varied the wafer thickness to study its effect on the caustic pattern; the current geometry uses a `100 µm` wafer instead of the original `525 µm` wafer.
