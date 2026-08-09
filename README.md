@@ -68,13 +68,13 @@ The position coordinates are written in meters.
 Only phonons absorbed at the aluminum sensor boundary are written to the output file.
 
 ## Results
-The hit positions are binned in the X–Y plane to produce a phonon-caustic intensity map. Regions with more hits correspond to crystal directions in which phonon energy is focused.
+The phonon hit positions are binned in the X–Y plane to generate phonon caustic intensity maps. Regions with a higher density of hits indicate crystal directions where phonon energy is preferentially focused due to anisotropic propagation. The figures below show the phonon caustic intensity maps for each phonon polarization mode, with all axes given in meters.
 
 <table>
 <tr>
-<td align="center">Slow</td>
-<td align="center">Fast</td>
-<td align="center">Long</td>
+<td align="center">Transverse Slow</td>
+<td align="center">Transverse Fast</td>
+<td align="center">Longitudinal</td>
 </tr>
 
 <tr>
@@ -83,3 +83,12 @@ The hit positions are binned in the X–Y plane to produce a phonon-caustic inte
 <td><img src="images/Long.png" width="300"></td>
 </tr>
 </table>
+
+## Files of Interest
+
+- `Caustic.mac` — Source, run, and physics configuration.
+- `Caustics_Plots.C` — ROOT macro for generating phonon caustic intensity maps.
+- `src/Caustic_PhononDetectorConstruction.cc` — Defines the silicon wafer, crystal orientation, and detector geometry.
+- `src/Caustic_PhononPrimaryGeneratorAction.cc` — Configures the primary phonon source and polarization.
+- `src/Caustic_PhononSensitivity.cc` — Records phonon hits on the detector surface.
+- `images/` — Contains geometry visualizations and example phonon caustic results.
