@@ -104,7 +104,7 @@ These plots provide the reference result from the original point-source configur
 
 ### Circular Source
 
-The point source was replaced by a circular source with a radius of `0.1 mm`. Sampling the initial phonon positions across a finite area broadens the injection region while retaining the polarization-dependent caustic structure.
+The point source was replaced by a circular source with a radius of `0.4 mm`. Sampling the initial phonon positions across a finite area broadens the injection region while retaining the polarization-dependent caustic structure.
 
 <table>
 <tr>
@@ -120,9 +120,11 @@ The point source was replaced by a circular source with a radius of `0.1 mm`. Sa
 </tr>
 </table>
 
+Compared with the point-source results, the circular source distributes phonons over a finite area, increasing the detected intensity in regions that were previously less populated. Since the phonons start from different positions across the source, the sharp features become smoother and broader. This effect depends on the source radius: smaller radii preserve more of the original caustic structure, while larger radii fill low-intensity regions more effectively but produce greater blurring and lower contrast.
+
 ### Varying the Wafer Thickness
 
-The wafer thickness was also varied to change the propagation distance between the source and detector. Reducing the thickness changes the spatial scale of the pattern and concentrates the caustic features closer to the source position. The current checked-in detector geometry uses a thickness of `100 µm`; the original geometry used `525 µm`.
+The wafer thickness was also varied to change the propagation distance between the source and detector. The figure below uses a thickness of `100 µm`; the original geometry used `525 µm`, and it uses a circular source of radius `0.1 mm`.
 
 <table>
 <tr>
@@ -137,6 +139,9 @@ The wafer thickness was also varied to change the propagation distance between t
 <td><img src="images/varying_thickness/Long.png" width="300"></td>
 </tr>
 </table>
+
+Reducing the wafer thickness brings the low-intensity regions closer to the source and makes them less prominent. However, I believe the shorter propagation distance is what causes the entire caustic pattern to become compressed toward the center, reducing the spatial separation between its characteristic features.
+
 
 ## Files of Interest
 
