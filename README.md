@@ -121,7 +121,7 @@ Compared with the point-source results, the circular source distributes phonons 
 
 ### Varying the Wafer Thickness
 
-The wafer thickness was also varied to change the propagation distance between the source and detector. The figure below uses a thickness of `100 µm`; the original geometry used `525 µm`, and it uses a circular source of radius `0.1 mm`.
+The wafer thickness was also varied to change the propagation distance between the source and detector. The figure below uses a thickness of `100 µm`, and a circular source of radius `0.1 mm`.
 
 <table>
 <tr>
