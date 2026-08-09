@@ -1,8 +1,8 @@
 //This is a root Program to Plot the Caustic Patterns from the phonon_hits.txt File
 //Function to Plot Only Phonon Caustic.
 
-const int nBinsX = 200;
-const int nBinsY = 200;
+const int nBinsX = 300;
+const int nBinsY = 300;
 const double minX = -0.004;
 const double minY = -0.004;
 const double maxX = 0.004;
@@ -16,7 +16,7 @@ void TransFast(const TString& fileName) {
   //Get the file output from the example
   ifstream in;
   in.open(fileName);
-  TH2D *Caustics= new TH2D("Caustics","Phonon Caustics",nBinsX,minX,maxX,nBinsY,minY,maxY);
+  TH2D *Caustics= new TH2D("Caustics","Phonon Caustics;X position [m];Y position [m]",nBinsX,minX,maxX,nBinsY,minY,maxY);
   Int_t nlines = 0;
   Int_t EventID=-1, TrackID=-1;
   TString Name_Phonon;
@@ -34,6 +34,7 @@ void TransFast(const TString& fileName) {
   }
 
   TCanvas *c1 = new TCanvas("c1","Canvas Example",200,10,600,480);
+  c1->SetLeftMargin(0.15);  // Leave room for the Y-axis title
   //c1->SetFillColor(1);
   //Caustics->SetMarkerColorAlpha(kWhite, 0.2);
   c1->SetLogz();
@@ -52,7 +53,7 @@ void TransSlow(const TString& fileName) {
   //Get the file output from the example
   ifstream in;
   in.open(fileName);
-  TH2D *Caustics= new TH2D("Caustics","Phonon Caustics",nBinsX,minX,maxX,nBinsY,minY,maxY);
+  TH2D *Caustics= new TH2D("Caustics","Phonon Caustics;X position [m];Y position [m]",nBinsX,minX,maxX,nBinsY,minY,maxY);
   Int_t nlines = 0;
   Int_t EventID=-1, TrackID=-1;
   TString Name_Phonon;
@@ -72,6 +73,7 @@ void TransSlow(const TString& fileName) {
   //printf(" found %d points\n",nlines);
   //gStyle->SetPalette(kBlack+3);
   TCanvas *c1 = new TCanvas("c1","Canvas Example",200,10,600,480);
+  c1->SetLeftMargin(0.15);  // Leave room for the Y-axis title
   c1->SetFillColor(kWhite);
   //Caustics->SetMarkerColorAlpha(kWhite, 0.2);
   c1->SetLogz();
@@ -90,7 +92,7 @@ void TransFast_and_Slow(const TString& fileName) {
   //Get the file output from the example
   ifstream in;
   in.open(fileName);
-  TH2D *Caustics= new TH2D("Caustics","Phonon Caustics",nBinsX,minX,maxX,nBinsY,minY,maxY);
+  TH2D *Caustics= new TH2D("Caustics","Phonon Caustics;X position [m];Y position [m]",nBinsX,minX,maxX,nBinsY,minY,maxY);
   Int_t nlines = 0;
   Int_t EventID=-1, TrackID=-1;
   TString Name_Phonon;
@@ -109,6 +111,7 @@ void TransFast_and_Slow(const TString& fileName) {
   //printf(" found %d points\n",nlines);
   //gStyle->SetPalette(kBlack+3);
   TCanvas *c1 = new TCanvas("c1","Canvas Example",200,10,600,480);
+  c1->SetLeftMargin(0.15);  // Leave room for the Y-axis title
   c1->SetFillColor(kWhite);
   //Caustics->SetMarkerColorAlpha(kWhite, 0.2);
   c1->SetLogz();

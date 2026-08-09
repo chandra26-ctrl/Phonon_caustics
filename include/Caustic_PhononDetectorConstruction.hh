@@ -43,7 +43,7 @@ private:
 
 private:
   G4double fWaferRadius = 50.0*mm;
-  G4double fWaferThickness = 525.0*um;
+  G4double fWaferThickness = 100.0*um;
   G4double fPrimaryFlatLength = 32.5*mm;
   
 };
