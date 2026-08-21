@@ -40,17 +40,20 @@ void Caustic_PhononPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent) {
   // This is only to distinguish the Phonons Caustics
   // Note.- This is not the initial density of States of the Substrate
   G4double selector = G4UniformRand();
-  if (selector<0.5) {
-  //  fParticleGun->SetParticleDefinition(G4PhononTransFast::Definition());
+  if (selector<0.33) {
+    fParticleGun->SetParticleDefinition(G4PhononTransFast::Definition());
 
   }
-  else {
-  //  fParticleGun->SetParticleDefinition(G4PhononTransSlow::Definition());
+  else if (selector<0.66) {
+    fParticleGun->SetParticleDefinition(G4PhononTransSlow::Definition());
   // fParticleGun->SetParticleDefinition(G4PhononLong::Definition());
   // If you are interested in Longitudinal phonons.
   // You only need to uncomment and comment on the other fParticleGun.
   }
+  else {
     fParticleGun->SetParticleDefinition(G4PhononLong::Definition());
+  }
+  //  fParticleGun->SetParticleDefinition(G4PhononLong::Definition());
      fParticleGun->GeneratePrimaryVertex(anEvent);
 }
 
