@@ -101,19 +101,21 @@ The transverse-slow and longitudinal modes show good qualitative agreement with 
 
 ### Circular Source
 
-The point source was replaced by a circular source with a radius of `0.4 mm`. Sampling the initial phonon positions across a finite area broadens the injection region while retaining the polarization-dependent caustic structure.
+The point source was replaced by a circular source with some radius. Sampling the initial phonon positions across a finite area broadens the injection region while retaining the polarization-dependent caustic structure.
 
 <table>
 <tr>
+<td align="center">Radius of source (mm)</td>
 <td align="center">Transverse Slow</td>
 <td align="center">Transverse Fast</td>
 <td align="center">Longitudinal</td>
 </tr>
 
 <tr>
-<td><img src="images/circular_source/slow.png" width="300"></td>
-<td><img src="images/circular_source/fast.png" width="300"></td>
-<td><img src="images/circular_source/long.png" width="300"></td>
+<td  align="center">0.4 mm</td>
+<td><img src="images/0-4_mm/circular_source/slow.png" width="300"></td>
+<td><img src="images/0-4_mm/circular_source/fast.png" width="300"></td>
+<td><img src="images/0-4_mm/circular_source/long.png" width="300"></td>
 </tr>
 </table>
 
