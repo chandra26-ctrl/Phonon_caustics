@@ -66,14 +66,39 @@ Each thread may produce a separate hit file. These files can be combined with:
 cat phonon_hits_G4WT*.txt > phonon_hits.txt
 ```
 
-## Output Data
+## Data Analysis
 
-Each detected phonon produces one row containing six columns:
+To generate a phonon caustic plot from a simulation output file, run the ROOT plotting macro using the following command:
+
+```bash
+root 'Caustics_Plots.C("<Phonon type>", "<File to analyze>")'
 ```
-event_id  track_id  phonon_type  x  y  z
+
+where:
+
+* **`<Phonon type>`** specifies which phonon polarization to include in the plot. The available options are:
+
+  * `Slow` — transverse slow phonons
+  * `Fast` — transverse fast phonons
+  * `Long` — longitudinal phonons
+  * `All` — all phonon polarizations combined
+
+* **`<File to analyze>`** specifies the simulation output file containing the recorded phonon hit data.
+
+For example, to plot all phonon polarizations recorded in `phonon_hits.txt`, run:
+
+```bash
+root 'Caustics_Plots.C("All", "phonon_hits.txt")'
 ```
-The position coordinates are written in meters.
-Only phonons absorbed at the aluminum sensor boundary are written to the output file.
+
+To plot only the transverse fast phonons from the same file, run:
+
+```bash
+root 'Caustics_Plots.C("Fast", "phonon_hits.txt")'
+```
+
+The macro reads the recorded phonon hit positions from the specified file, filters the data according to the selected phonon polarization, and bins the hit positions in the X–Y plane to produce the corresponding phonon caustic intensity map. Regions with a higher concentration of hits indicate directions in which phonon energy is preferentially focused by the silicon crystal.
+
 
 ## Results
 
