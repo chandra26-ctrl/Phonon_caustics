@@ -128,7 +128,7 @@ The point source was replaced by a circular source with some radius. Sampling th
 <tr>
 <td  align="center">0.3 mm</td>
 <td><img src="images/circular_source/0-3_mm/Slow.png" width="300"></td>
-<td><img src="images/circular_source//0-3_mm/Sast.png" width="300"></td>
+<td><img src="images/circular_source//0-3_mm/Fast.png" width="300"></td>
 <td><img src="images/circular_source/0-3_mm/Long.png" width="300"></td>
 </tr>
 
