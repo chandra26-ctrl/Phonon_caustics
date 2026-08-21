@@ -4,13 +4,10 @@ This repository is a modified version of the G4CMP phonon-caustics example.
 
 This project uses Geant4 and G4CMP to simulate ballistic phonon propagation through a silicon wafer. Phonons are transported through the crystal lattice and recorded when they reach an aluminum sensor on the wafer surface. The original point-source example has been extended to use a finite circular source and to study how changing the wafer thickness affects the observed caustic patterns.
 
-## Changes Made
+## Changes Made (Aug 8, 2026)
 
 - Replaced the original point source with a circular plane source of radius `0.1 mm`.
-- Moved the source to the lower face of the wafer and directed phonons toward the detector.
 - Varied the wafer thickness to study its effect on the caustic pattern; the current geometry uses a `100 µm` wafer instead of the original `525 µm` wafer.
-- Preserved result plots from the point-source, circular-source, and varying-thickness studies for comparison.
-- Kept separate plots for transverse-slow, transverse-fast, and longitudinal phonons.
 
 ## Simulation Geometry
 
@@ -20,7 +17,7 @@ The simulated geometry consists of:
 
 - A circular silicon wafer (white) with a primary flat
 - Wafer radius: `50 mm`
-- Wafer thickness: `100 µm` in the current configuration
+- Wafer thickness: `525 µm` in the original configuration
 - Primary-flat length: `32.5 mm`
 - Silicon crystal orientation: `(100)` with a `45°` rotation
 - An aluminum phonon sensor (blue) covering the upper wafer surface
@@ -33,19 +30,17 @@ The silicon–aluminum boundary is configured for complete phonon absorption. Wh
 Phonon generation is controlled by `Caustic.mac` and
 `Caustic_PhononPrimaryGeneratorAction.cc`.
 
-The current configuration generates:
+The original configuration generates:
 
 - `40,000,000` primary phonons
 - One phonon per event
 - Phonon energy: `0.03 eV`
-- Source type: circular plane
-- Source radius: `0.1 mm`
-- Source position: `(0, 0, -0.0495 mm)`
-- Angular distribution: isotropic within `0° ≤ θ ≤ 90°`
+- Source type: point source
+- Source position: `(0, 0, -0.262 mm)`
+- Angular distribution: isotropic within `90° ≤ θ ≤ 180°`
 
-The circular source is located at the lower face of the `100 µm` wafer, opposite the aluminum detector, and emits phonons into the wafer toward the detector. The previous point-source commands remain commented in `Caustic.mac`, making it easy to switch between the original and updated source geometries.
-
-The phonon type is selected in `src/Caustic_PhononPrimaryGeneratorAction.cc`. The current checked-in configuration generates longitudinal phonons; the commented definitions can be used for the transverse-fast and transverse-slow runs.
+The phonons are generated on the side of the wafer opposite the aluminum detector.
+The phonon type is selected in `src/Caustic_PhononPrimaryGeneratorAction.cc`.
 
 ## Running the simulation
 
@@ -102,9 +97,11 @@ These plots provide the reference result from the original point-source configur
 </tr>
 </table>
 
+The transverse-slow and longitudinal modes show good qualitative agreement with the reference patterns. The transverse-fast mode also reproduces the main caustic features, although four unexpected low-intensity regions appear near the center of the distribution. The origin of these features has not yet been identified. To investigate whether the blue spots could be reduced or eliminated, two modifications were tested: replacing the point source with a circular source and varying the wafer dimensions. The results and observations from these tests are presented below.
+
 ### Circular Source
 
-The point source was replaced by a circular source with a radius of `0.1 mm`. Sampling the initial phonon positions across a finite area broadens the injection region while retaining the polarization-dependent caustic structure.
+The point source was replaced by a circular source with a radius of `0.4 mm`. Sampling the initial phonon positions across a finite area broadens the injection region while retaining the polarization-dependent caustic structure.
 
 <table>
 <tr>
@@ -120,9 +117,11 @@ The point source was replaced by a circular source with a radius of `0.1 mm`. Sa
 </tr>
 </table>
 
+Compared with the point-source results, the circular source distributes phonons over a finite area, increasing the detected intensity in regions that were previously less populated. Since the phonons start from different positions across the source, the sharp features become smoother and broader. This effect depends on the source radius: smaller radii preserve more of the original caustic structure, while larger radii fill low-intensity regions more effectively but produce greater blurring and lower contrast.
+
 ### Varying the Wafer Thickness
 
-The wafer thickness was also varied to change the propagation distance between the source and detector. Reducing the thickness changes the spatial scale of the pattern and concentrates the caustic features closer to the source position. The current checked-in detector geometry uses a thickness of `100 µm`; the original geometry used `525 µm`.
+The wafer thickness was also varied to change the propagation distance between the source and detector. The figure below uses a thickness of `100 µm`, and a circular source of radius `0.1 mm`.
 
 <table>
 <tr>
@@ -137,6 +136,9 @@ The wafer thickness was also varied to change the propagation distance between t
 <td><img src="images/varying_thickness/Long.png" width="300"></td>
 </tr>
 </table>
+
+Reducing the wafer thickness brings the low-intensity regions closer to the source and makes them less prominent. However, I believe the shorter propagation distance is what causes the entire caustic pattern to become compressed toward the center, reducing the spatial separation between its characteristic features.
+
 
 ## Files of Interest
 
