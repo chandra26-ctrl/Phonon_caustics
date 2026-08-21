@@ -113,9 +113,9 @@ The point source was replaced by a circular source with some radius. Sampling th
 
 <tr>
 <td  align="center">0.4 mm</td>
-<td><img src="images/0-4_mm/circular_source/slow.png" width="300"></td>
-<td><img src="images/0-4_mm/circular_source/fast.png" width="300"></td>
-<td><img src="images/0-4_mm/circular_source/long.png" width="300"></td>
+<td><img src="images/circular_source/0-4_mm/slow.png" width="300"></td>
+<td><img src="images/circular_source//0-4_mm/fast.png" width="300"></td>
+<td><img src="images/circular_source/0-4_mm/long.png" width="300"></td>
 </tr>
 </table>
 
