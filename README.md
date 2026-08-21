@@ -138,23 +138,23 @@ The point source was replaced by a circular source with some radius. Sampling th
 
 <tr>
 <td  align="center">0.1 mm</td>
-<td><img src="images/circular_source/0-1_mm/Slow.png" width="300"></td>
-<td><img src="images/circular_source//0-1_mm/Fast.png" width="300"></td>
-<td><img src="images/circular_source/0-1_mm/Long.png" width="300"></td>
+<td><img src="images/circular_source/0-1_mm/slow.png" width="300"></td>
+<td><img src="images/circular_source//0-1_mm/fast.png" width="300"></td>
+<td><img src="images/circular_source/0-1_mm/long.png" width="300"></td>
 </tr>
 
 <tr>
 <td  align="center">0.2 mm</td>
-<td><img src="images/circular_source/0-2_mm/Slow.png" width="300"></td>
-<td><img src="images/circular_source//0-2_mm/Fast.png" width="300"></td>
-<td><img src="images/circular_source/0-2_mm/Long.png" width="300"></td>
+<td><img src="images/circular_source/0-2_mm/slow.png" width="300"></td>
+<td><img src="images/circular_source//0-2_mm/fast.png" width="300"></td>
+<td><img src="images/circular_source/0-2_mm/long.png" width="300"></td>
 </tr>
 
 <tr>
 <td  align="center">0.3 mm</td>
-<td><img src="images/circular_source/0-3_mm/Slow.png" width="300"></td>
-<td><img src="images/circular_source//0-3_mm/Fast.png" width="300"></td>
-<td><img src="images/circular_source/0-3_mm/Long.png" width="300"></td>
+<td><img src="images/circular_source/0-3_mm/slow.png" width="300"></td>
+<td><img src="images/circular_source//0-3_mm/fast.png" width="300"></td>
+<td><img src="images/circular_source/0-3_mm/long.png" width="300"></td>
 </tr>
 
 <tr>
